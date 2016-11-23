@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.vatsaldesai92'
 version = '1.0.1'
@@ -44,7 +44,8 @@ task javadoc(type: Javadoc) {
     failOnError false
     source = android.sourceSets.main.java.sourceFiles
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.compile}
+    classpath += configurations.compile
+}
 
 // build a jar with javadoc
 task javadocJar(type: Jar, dependsOn: javadoc) {
